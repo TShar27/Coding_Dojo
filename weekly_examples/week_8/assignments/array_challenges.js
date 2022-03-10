@@ -80,4 +80,4 @@ function reverse(arr) {
     return arr;
 }
 var result = reverse(["a", "b", "c", "d", "e"]);
-console.log(result); 
+console.log(result);
