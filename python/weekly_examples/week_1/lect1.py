@@ -54,3 +54,8 @@ def add_my_two_numbers(num_1,num_2):
     return results
 
 print(add_my_two_numbers(7,3))
+
+car = "black monte carlo"
+car2 = "white porsche"
+
+print(f"my car is a {car}, and hers is a {car2}")
