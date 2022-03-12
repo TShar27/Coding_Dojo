@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dojo Weather</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- NAV -->
+    <div class="nav">
+        <div class="flex-container"> 
+            <h1 class="nav-title"> DojoWeather </h1>
+            <ul class="nav-links">
+                <li onclick="loading()"><a href="#"></a>Burbank</li>
+                <li onclick="loading()"><a href="#"></a>Chicago</li>
+                <li onclick="loading()"><a href="#"></a>Dallas</li>
+            </ul>
+        </div>
+    </div>
+    <!-- SUBHEADER -->
+    <div class="Subheader">
+        <h1 class="sub-title">San Jose</h1>
+        <h3 class="temp-display"> show temperature in <select name="temp"></select> </h3>
+        <!-- Add subitle line -->
+    </div>
+    <!-- MAIN PAGE -->
+    <div class="main">
+        <div class="temp-boxes">
+            <div class="Forecast">
+                <h1>Today</h1> 
+                <img src="assets/some_rain.png" alt="rain">
+                <p>some rain</p>
+                <p class="temperatures">
+                    <span class="high" id="temp1">24</span>
+                    <span class="low" id="temp2">18</span>
+                </p> 
+            </div>
+            <div class="Forecast">
+                <h1>Tomorrow</h1>
+                <img src="assets/some_sun.png" alt="sun">
+                <p>some sun</p>
+                <p class="temperatures">
+                    <span class="high" id="temp3">27</span>
+                    <span class="low" id="temp4">19</span>
+            </div>
+            <div class="Forecast">
+                <h1>Friday</h1> 
+                <img src="assets/some_clouds.png" alt="clouds">
+                <p>some clouds</p>
+                <p class="temperatures">
+                    <span class="high" id="temp5">21</span>
+                    <span class="low" id="temp6">16</span>
+            </div>
+            <div class="Forecast">
+                <h1>Saturday</h1> 
+                <img src="assets/some_sun.png" alt="sun">
+                <p>some sun</p>
+                <p class="temperatures">
+                    <span class="high" id="temp7">26</span>
+                    <span class="low" id="temp8">21</span> 
+            </div>
+            
+        </div>
+    </div >
+    <!-- FOOTER -->
+    <div class="footer">  
+        <div class="footer-header">
+            <img src="assets/cookie.png" alt="cookie">
+            <div class ="text">
+                <h1>Stop! Cookie time </h1>
+                <p>We use cookies (sadly not the edible ones) to personalize content and ads, to provide social media features and to analyze our site traffic. <a href="#">Read more...</a></p>
+            </div>
+            <button class="btn" onclick="remove()"> I Accept</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

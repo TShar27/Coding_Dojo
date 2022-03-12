@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GamingDojo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="mini-nav"></div>
+        <div class="nav">
+            <h1> Gaming<span>Dojo</span></h1>
+            <div class="right-nav-items">
+                <select name="currency" id="dropdown-nav">
+                    <option>Euro €</option>
+                    <option>Dollar $</option>
+                </select>
+                <img src="images/cart-light.png" alt="cart">
+                <p id="cart_num">0</p>
+                <img src="images/search-light.png" alt="search" class="search-glass">
+            </div>
+        </div>
+    </div>
+    <div class="lower-container">
+        <div class="main-content">
+            <h2>Highlights</h2>
+            <div class="main-images">
+                <img src="images/arrow-left.png" alt="arrow-left" class="arrow-img-left" onclick="changeImageBack()">
+                <img src="images/stonepunk.png" alt="main-pic" class="main-pic" id="imgClickAndChange">
+                <img src="images/arrow-right.png" alt="arrow-right" class="arrow-img-right" onclick="changeImage()">
+            </div>
+            <div class="blocks">
+                <div class="block"></div>
+                <div class="block-purp"></div>
+                <div class="block"></div>
+                <div class="block"></div>
+            </div>
+            <div class="bottom-section">
+                <div class="card">
+                    <img  src="images/cafe-neko.png" alt="Cafe-Neko">
+                    <h3>Cafe Neko: Gold Edition</h3>
+                    <div class="sm-img">
+                        <img src="images/windows.png" alt="microsoft">
+                        <img src="images/apple.png" alt="apple">
+                    </div>
+                    <div class="lower-card">
+                        <p class="discount"> <b>-20%</b> </p>
+                        <p class="pricing"> <s>€14.98</s> <br> <br>€10.49</p> 
+                        <button class="btn" onclick="plus1()">Buy</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <img  src="images/pixel-ninjas-2.png" alt="pixel-ninjas">
+                    <h3>Pixel Ninjas-2</h3>
+                    <div class="sm-img">
+                        <img src="images/windows.png" alt="microsoft">
+                        <img src="images/apple.png" alt="apple">
+                    </div>
+                    <div class="lower-card">
+                        <p class="discount"> <b>-10%</b></p>
+                        <p class="pricing"> <s>€8.19</s><br> <br>€7.39</p> 
+                        <button class="btn" onclick="plus1()">Buy</button>
+                    </div>
+                </div>
+                <div class="card">
+                    <img  src="images/stonepunk.png" alt="stonepunk">
+                    <h3>Stonepunk 10000 BCE</h3>
+                    <div class="sm-img">
+                        <img src="images/windows.png" alt="microsoft">
+                        <img src="images/apple.png" alt="apple">
+                        <img src="images/linux.png" alt="linux" class="linux-img" onclick="message()">
+                    </div>
+                    <div class="lower-card">
+                        <p class="discount"> <b>-20%</b></p>
+                        <p class="pricing"><br> <br>€19.99</p> 
+                        <button class="btn" onclick="plus1()">Buy</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

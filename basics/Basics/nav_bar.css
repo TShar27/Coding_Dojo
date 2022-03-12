@@ -1,0 +1,39 @@
+*{
+    box-sizing: border-box;
+}
+#nav{
+    background-color:rgb(128, 128, 128);
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+}
+h1{
+    
+    color:whitesmoke;
+    font-family: sans-serif;
+    padding-left: 10px;
+}
+ul{
+    
+    display: flex;
+    width: 500px;
+    padding:0px;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+    font-family: sans-serif;
+}
+a{
+    color: lightgray;
+}
+b{
+    color: whitesmoke;
+}
+.btn{
+    height: 30px;
+    border-color:black;
+    width: 80px;
+    color:whitesmoke;
+    background-color: rgb(88, 193, 241);
+    box-shadow: 3px 3px 3px black;
+}

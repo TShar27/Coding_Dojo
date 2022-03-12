@@ -1,0 +1,26 @@
+#compartment{
+    width: 400px;
+    padding: 40px;
+}
+#button_1{
+    
+    border-radius: 10px;
+    border-color:rgb(26,211,211);
+    width: 115px;
+    color:rgb(26, 211, 211);
+}
+#button_2{
+    border-radius: 10px;
+    border-color:rgb(50, 194, 194);
+    width: 10;
+    color:whitesmoke;
+    background-color: rgb(50, 194, 194);
+}
+#button_3{
+    height: 30px;
+    border-color:black;
+    width: 130px;
+    color:whitesmoke;
+    background-color: rgb(50, 105, 206);
+    box-shadow: 5px 5px 5px black;
+}

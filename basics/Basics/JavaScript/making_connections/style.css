@@ -1,0 +1,200 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: whitesmoke;
+}
+
+.top {
+    background-color: rgb(41, 37, 37);
+}
+
+.nav {
+    width: 1080px;
+    margin: 0 auto;
+    color: whitesmoke;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.links {
+    display: flex;
+    width: 50%;
+    padding:0px;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+    font-family: sans-serif;
+}
+
+.nav a {
+    color: whitesmoke;
+    text-decoration: none;
+}
+
+.title {
+    color:whitesmoke;
+    padding-left: 10px;
+    margin-left: 20px;
+}
+
+.btn {
+    height: 40px;
+    border-color:rgb(41, 37, 37);
+    width: 100px;
+    color:whitesmoke;
+    background-color: rgb(9, 158, 151);
+    box-shadow: 3px 3px 3px rgb(41, 37, 37);
+    font-size: 1.2rem;
+
+}
+
+.container {
+    width: 1080px;
+    margin: 0 auto;
+}
+
+.row {
+    display: flex;
+}
+
+.col, .col-2 {
+    margin: 10px;
+    padding: 10px;
+    flex: 1;
+}
+
+.col-2 {
+    flex: 2;
+}
+
+.container {
+    width: 1000px;
+    margin: 0 auto;
+    /* display: flex; */
+    justify-content: space-between;
+    align-items: center;
+}
+
+.user-card, .card {
+    width: 100%;
+    background-color: whitesmoke;
+     font-size: 1.0rem;
+    border-style: solid;
+    border-color: gray;
+    margin-bottom: 15px;
+    
+}
+
+.card-nav {
+    background-color: rgb(9, 158, 151);
+    height: 100px;
+    margin-bottom: 80px;
+}
+
+.marker{
+    height: 15px;
+    width:auto;
+    margin-right: 10px
+}
+
+.footer{
+    margin-left: 30px;
+}
+
+.gear{
+    height: 15px;
+    width:auto;
+    margin-right: 10px;
+    cursor: pointer;
+
+}
+
+.card-body {
+    padding: 20px;
+}
+
+.card-body h1, 
+.card-body h2,
+.card-body h3,
+.card-body p {
+    margin: 20px 0px;
+}
+
+.avatar-m {
+    border-radius: 50%;
+    background-color: whitesmoke;
+    /* position:absolute */
+    height: 190px;
+    padding: 5px;
+    margin-top: 2px;
+    margin-left: 20px;
+}
+
+.gear{
+    height: 15px;
+    width:auto;
+    margin-right: 10px
+}
+
+a {
+    color: #1c5db8;
+}
+
+.header {
+    background-color: rgb(41, 37, 37);
+    color: whitesmoke;
+    display: flex;
+    padding: 20px;
+    font-size: 20px;
+    align-items: center;
+}
+
+.prof-pic {
+    height: 44px;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+.yes_no{
+    height: 45px;
+    border-radius: 15px;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.user-line {
+    display: flex;
+    margin: 20px;
+    justify-content: space-between;
+}
+
+.start, .end {
+    display: flex;
+    font-size: 24px;
+    align-items: center;
+}
+
+.dates {
+    font-size: 20px;
+    color: lightslategray;
+}
+
+.footer {
+    padding: 20px;
+    border-top: 2px solid lightslategray;
+}
+
+.connections {
+    background-color: whitesmoke;
+    color: rgba(34, 29, 29, 0.849);
+    font-size: 20px;
+    border-radius: 12px;
+    height: 24px;
+    padding: 0 10px;
+    margin-right: 10px;
+}

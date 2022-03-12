@@ -1,0 +1,170 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #f3f3f3;
+    font-family: 'Roboto', sans-serif;
+}
+
+.flex-container{
+    width: 1250px;
+    margin: 0 auto;
+    /* border: 2px solid black; */
+}
+
+.flex-container, .nav-links, .nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+}
+
+.nav {
+    height: 80px;
+    background-color: skyblue;
+    color: #fff;
+    margin-bottom: 20px;
+    /* border: 2px solid black; */
+    font-size: 1.6rem;
+}
+
+.nav-links {
+    width: 400px;
+    list-style-type: none;
+    align-items: center;
+    /* border: 2px solid black; */
+    margin-right: 40px;
+    cursor: pointer;
+}
+/* 
+.nav-title{
+    border: 2px solid black;
+} */
+
+.Subheader {
+
+    width: 1250px;
+    margin: 0 auto;
+    display: flex;
+    height: 100px;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    border-bottom: 2px solid #999;
+
+}
+
+.sub-title, .temp-display {
+    /* border: 2px solid black; */
+    padding: 5px;
+}
+
+.sub-title {
+    font-size: 2.4rem;
+}
+
+.temp-display {
+    font-size: 1.2rem;
+    margin-right: 40px;
+}
+
+.temp-boxes {
+    /* border: 2px solid black; */
+    display: flex;
+    height: 435px;
+    width: 1250px;
+    margin: 0 auto;
+}
+
+.Forecast{
+    height: 450px;
+    width: 285px;
+    /* border: 2px solid black; */
+    margin: 15px;  
+    text-align: center;
+    background-color: #ddd;
+}
+
+.Forecast h1 {
+    margin-top: 40px;
+}
+
+.Forecast img {
+    border-radius: 50%;
+    width: 130px;
+    margin: 40px 0;
+}
+
+.Forecast p {
+    font-size: 1.2rem;
+}
+
+.temperatures {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.high, .low {
+    font-size: 1.7rem;
+    font-weight: 900;
+}
+
+.high::after, .low::after {
+    content: "°";
+}
+
+.high {
+    color: #cf2a27;
+}
+
+.low {
+    color: #2b78e4;
+}
+
+.footer {
+    width: 100%;
+    position: absolute;
+    bottom: 80px;
+}
+.footer-header{
+    width: 1250px;
+    height: 160px;
+    margin: 0 auto;
+    border: 2px solid black;
+    /* margin-top: 40px; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #ddd;
+}
+
+.btn {
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    border: 2px solid #000;
+    box-shadow: 4px 4px #000;
+    background-color: #9fc5f8;
+    cursor: pointer;
+    margin-right: 40px;
+}
+
+.text {
+    width: 70%;
+}
+
+.text h2 {
+    font-size: 1.8rem;
+}
+
+.text p {
+    font-size: 1.2rem;
+}
+
+.footer-header img {
+    margin-left: 40px;
+}
+
+

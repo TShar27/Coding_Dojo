@@ -1,0 +1,10 @@
+h1{
+    color:wheat;
+    background-color: teal;
+}
+body{
+    background-color: rgb(205, 253, 255);
+}
+* {
+    outline: 1px solid red;
+}

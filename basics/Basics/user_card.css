@@ -1,0 +1,49 @@
+#container{
+    width:750px;
+    height:350px;
+    background-color: whitesmoke;
+    margin: 0px auto;
+    border-style: solid;
+    border-color: gray;
+}
+
+.usercard{
+    height:75px;
+    width:75px;
+    position: absolute;
+    top:60px; 
+    border: 2px white;
+    margin-left: 35px;
+    /* border-radius: 5px; */
+}
+.navbar{
+    background-color: teal;
+    height: 100px;
+    width: 750px;
+}
+h1{
+    margin-left: 30px;
+    font-family: 'Roboto', sans-serif;
+}
+.marker{
+    height: 15px;
+    width:auto;
+    margin-right: 10px
+}
+h3{
+    margin-left: 25px;
+    font-family: 'Roboto', sans-serif;
+}
+p{
+    margin-left: 30px;
+    font-family: 'Roboto', sans-serif;
+    
+}
+.footer{
+    margin-left: 30px;
+}
+.gear{
+    height: 15px;
+    width:auto;
+    margin-right: 10px
+}
