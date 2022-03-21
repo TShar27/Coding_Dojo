@@ -67,3 +67,28 @@ def iterate_dictionary(key_name,list):
 iterate_dictionary('first_name',students)
 iterate_dictionary('last_name',students)
 
+# 4
+
+dojo = {
+   'locations': ['San Jose', 'Seattle', 'Dallas', 'Chicago', 'Tulsa', 'DC', 'Burbank'],
+   'instructors': ['Michael', 'Amy', 'Eduardo', 'Josh', 'Graham', 'Patrick', 'Minh', 'Devon']
+}
+
+# My work
+def printInfo(list):
+    print(len(list['locations']),"Locations")
+    for i in range(0,len(list['locations'])):
+        print(list[i])
+
+
+printInfo(dojo)
+
+# Solution 
+def print_info(dict):
+    for key,val in dict.items():
+        print("--------------")
+        print(f"{len(val)} {key.upper()}")
+        for i in range(0, len(val)):
+            print(val[i])
+
+print_info(dojo)
