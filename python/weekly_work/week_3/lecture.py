@@ -2,59 +2,55 @@ goku = {'name': 'Goku', 'universe': 'Dragonball Z', 'health': 100, 'power': 30, 
 ironman = {'name': 'Tony Stark', 'universe': 'Marvel', 'health': 120, 'power': 30, 'defense': 20}
 captain_america = {'name': 'Steve', 'universe': 'Marvel', 'health': 150, 'power': 20, 'defense': 30}
 
-# class Character:
-#     def __init__(self):
-#         self.name = "Goku"
-#         self.universe = "Dragonball Z"
-#         self.health = 150
-#         self.power = 30
-#         self.defense = 10
-# Manual way of inputting data - no good ^
+class Character:
+    def __init__(self):
+        self.name = "Goku"
+        self.universe = "Dragonball Z"
+        self.health = 150
+        self.power = 30
+        self.defense = 10
+#Manual way of inputting data - no good ^
 
-# class Character:
-#     all_chars = []
-#     def __init__(self, name, universe, health, power, defense, sidekick = "None"):
-#          self.name = name
-#          self.universe = universe
-#          self.health = health
-#          self.power = power
-#          self.defense = defense
-#          self.sidekick = sidekick
-#          Character.all_chars.append(self)
+class Character:
+    all_chars = []
+    def __init__(self, name, universe, health, power, defense, sidekick = "None"):
+         self.name = name
+         self.universe = universe
+         self.health = health
+         self.power = power
+         self.defense = defense
+         self.sidekick = sidekick
+         Character.all_chars.append(self)
     
-#     def change_health(self,health):
-#         self.health = health
-#         return self
+    def change_health(self,health):
+        self.health = health
+        return self
     
-#     def change_power(self,power):
-#         self.power = power
-#         return self
+    def change_power(self,power):
+        self.power = power
+        return self
 
-#     def change_defense(self,defense):
-#         self.defense = defense
-#         return self
+    def change_defense(self,defense):
+        self.defense = defense
+        return self
 
-#     def change_name(self,name):
-#         self.name = name
-#         return self
+    def change_name(self,name):
+        self.name = name
+        return self
     
-#     def print_character(self):
-#         print(f"name = {self.name}, universe = {self.universe} health = {self.health}, power = {self.power}, defense = {self.defense}")
+    def print_character(self):
+        print(f"name = {self.name}, universe = {self.universe} health = {self.health}, power = {self.power}, defense = {self.defense}")
 
-# #  A function inside of a class is called a method ^
+#  A function inside of a class is called a method ^
 
-# goku = Character("Goku", "Dragonball Z", 150, 30, 10)
-# print(goku.health)
+goku = Character("Goku", "Dragonball Z", 150, 30, 10)
+print(goku.health)
 
-# goku.change_health(120)
-# print(goku.health)
+goku.change_health(120)
+print(goku.health)
 
-# goku.change_name("Vegeta")
-# print(goku.name)
-
-
-
-
+goku.change_name("Vegeta")
+print(goku.name)
 
 
 
