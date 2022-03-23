@@ -1,0 +1,26 @@
+## Class 
+A blueprint of a what you want to create in programming
+
+## Attributes
+Variables inside a class
+
+## Method
+Functions inside a class
+
+## Instance/ Object
+You can create different instances or objects using a class 
+Has its own attributes and methods
+    - intance attirbutes and instance methods
+You can create private attributes and methods so that instances/obejcts cant access them 
+
+## Constructer
+A method that the program will run whenever you create a new instance 
+
+## destructer
+A method that the program will run when an instasnce is destroyed/removed/deleted
+
+## Inheritance
+The new class can take on the same funtionality of the parent class
+
+## Protected
+Allows children to inherit class functionlity but still hide methods from instances/objects
