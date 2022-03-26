@@ -40,10 +40,10 @@ tony.make_withdrawal(200)
 timmy.transfer_money(olga,100)
 
 
-# timmy.display_user_balance()
-# tony.display_user_balance()
-# olga.display_user_balance()
-# print(timmy.account_balance)
+timmy.display_user_balance()
+tony.display_user_balance()
+olga.display_user_balance()
+
 
 
 #Chaining
