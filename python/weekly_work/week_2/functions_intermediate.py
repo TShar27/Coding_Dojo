@@ -92,3 +92,5 @@ def print_info(dict):
             print(val[i])
 
 print_info(dojo)
+
+
