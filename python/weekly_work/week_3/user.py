@@ -6,9 +6,11 @@ class User:
         
     def make_deposit(self,amount):
         self.account_balance += amount
+        return self
 
     def make_withdrawal(self,amount):
-        self.account_balance -= amount 
+        self.account_balance -= amount
+        return self
     
     def display_user_balance(self):
         print(f"{self.name},Balance: ${self.account_balance}")
@@ -38,10 +40,14 @@ tony.make_withdrawal(200)
 timmy.transfer_money(olga,100)
 
 
-timmy.display_user_balance()
-tony.display_user_balance()
-olga.display_user_balance()
+# timmy.display_user_balance()
+# tony.display_user_balance()
+# olga.display_user_balance()
 # print(timmy.account_balance)
+
+
+#Chaining
+timmy.make_deposit(700).make_deposit(250).make_withdrawal(100).display_user_balance()
 
 
 
