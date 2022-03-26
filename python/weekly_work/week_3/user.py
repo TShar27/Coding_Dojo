@@ -16,6 +16,8 @@ class User:
     def transfer_money(self,user2,amount):
         self.account_balance -= amount
         user2.account_balance += amount
+        self.display_user_balance()
+        user2.display_user_balance()
 
 timmy = User("Timmy Shar","timmyshar@yahoo.com")
 tony = User("Tony Shar","Tonyshar5@rocketmail.com")
