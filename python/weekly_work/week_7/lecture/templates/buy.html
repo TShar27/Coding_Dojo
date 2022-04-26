@@ -7,6 +7,9 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>{{data['first_name']}} {{data['last_name']}} bought {{data.meatballs}}  meatballs charged to id number: {{data.student_id}} </h1>
+    <h1>{{session['fname']}} {{session['lname']}} bought {{session.count}} amount of {{session.food}} charged to id number: {{session.student_id}} for a total of ${{session['total']}} dollars </h1>
+    <a href="/clear_session">Clear Session!! </a>
 </body>
 </html>
+
+    
