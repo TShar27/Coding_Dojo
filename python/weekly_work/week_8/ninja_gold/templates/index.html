@@ -10,27 +10,30 @@
 <body>
     <div id="container">
         <div class="nav">
-            <h4 class="header">Your Gold:</h4>
+            <h4 class="header">Your Gold: {{session.gold}}</h4>
         </div>
         <div class="main_page">
             <div class="land_box">
-                <h2>Farm</h2>
-                <p class="gold_reward">(Earns 10-20 golds)</p>
-                 <button> Find Gold </button>
+                <form action="/process_money" method = "post">
+                    <h2>Farm</h2>
+                    <p class="gold_reward">(Earns 10-20 golds)</p>
+                    <input type="hidden" name="land" value="farm">
+                    <button> Find Gold </button>
+                </form>
             </div>
             <div class="land_box">
                 <h2>Cave</h2>
                 <p class="gold_reward">(Earns 5-10 golds)</p>
-                 <button> Find Gold </button>
+                <button> Find Gold </button>
             </div>
             <div class="land_box">
                 <h2>House</h2>
                 <p class="gold_reward">(Earns 2-5 golds)</p>
-                 <button> Find Gold </button>
+                <button> Find Gold </button>
             </div>
             <div class="land_box">
                 <h2>Caisno</h2>
-                <p class="gold_reward">(Earns 0-50 golds)</p>
+                <p class="gold_reward">(Earns/Takes 0-50 golds)</p>
                 <button> Find Gold </button>
             </div>
         </div>
