@@ -22,23 +22,35 @@
                 </form>
             </div>
             <div class="land_box">
-                <h2>Cave</h2>
-                <p class="gold_reward">(Earns 5-10 golds)</p>
-                <button> Find Gold </button>
+                <form action="/process_money" method = "post">
+                    <h2>Cave</h2>
+                    <p class="gold_reward">(Earns 5-10 golds)</p>
+                    <input type="hidden" name="land" value="cave">
+                    <button> Find Gold </button>
+                </form>
             </div>
             <div class="land_box">
-                <h2>House</h2>
-                <p class="gold_reward">(Earns 2-5 golds)</p>
-                <button> Find Gold </button>
+                <form action="/process_money" method = "post">
+                    <h2>House</h2>
+                    <p class="gold_reward">(Earns 2-5 golds)</p>
+                    <input type="hidden" name="land" value="house">
+                    <button> Find Gold </button>
+                </form>
             </div>
             <div class="land_box">
-                <h2>Caisno</h2>
-                <p class="gold_reward">(Earns/Takes 0-50 golds)</p>
-                <button> Find Gold </button>
+                <form action="/process_money" method = "post">
+                    <h2>Caisno</h2>
+                    <p class="gold_reward">(Earns/Takes 0-50 golds)</p>
+                    <input type="hidden" name="land" value="casino">
+                    <button> Find Gold </button>
+                </form>
             </div>
         </div>
         <p class = "activities">Activities:</p>
             <div class = "bottom_page">
+                {% for i in session['activities'] %}
+                    <p class = "{{i['color']}}">{{i['message']}}</p>
+                {% endfor %}
             </div>
         <a href="/reset">Reset</a>
     </div>

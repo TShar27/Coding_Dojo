@@ -8,14 +8,33 @@ app.secret_key ="Timmy's a beast"
 def index():
     if 'gold'  not in session:
         session['gold'] = 0
+        session['activities'] = []
     return render_template("index.html")
 
 @app.route('/process_money',methods =['post'])
 def choice():
     session['land'] = request.form['land']
-    random_number = random.randint(10,21)
     if session['land'] == 'farm':
-        session['gold'] += random_number
+        gold_amount = random.randint(10,21)
+        session['gold'] += gold_amount
+        message = f" Ninja earned {gold_amount} gold from the farm"
+        color = "green"
+    if session['land'] == 'cave':
+        gold_amount = random.randint(5,11)
+        session['gold'] += gold_amount
+        message = f" Ninja earned {gold_amount} gold from the cave"
+        color = "brown"
+    if session['land'] == 'house':
+        gold_amount = random.randint(2,6)
+        session['gold'] += gold_amount
+        message = f" Ninja earned {gold_amount} gold from the house"
+        color = "orange"
+    if session['land'] == 'casino':
+        gold_amount = random.randint(-50,51)
+        session['gold'] += gold_amount
+        message = f" Ninja earned {gold_amount} gold from the casino"
+        color = "purple"
+    session['activities'].append({'message':message, 'color': color})
     print(session)
     return redirect('/')
 

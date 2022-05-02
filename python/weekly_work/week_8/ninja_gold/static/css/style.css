@@ -64,11 +64,27 @@ button{
 }
 .bottom_page{
     border: 2px solid black;
-    height: 250px;
+    height: 375px;
     width: auto;
 }
 
 .activities{
     margin-top: 20px;
     margin-bottom: 5px;
+}
+
+.green{
+    color:green 
+}
+
+.brown{
+    color:brown
+}
+
+.orange{
+    color: darkgoldenrod
+}
+
+.purple{
+    color:rebeccapurple
 }
