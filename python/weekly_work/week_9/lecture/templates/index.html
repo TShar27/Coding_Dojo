@@ -7,6 +7,9 @@
     <title>Hello</title>
 </head>
 <body>
-    <h1>Hey</h1>
+    {% for user in users %}
+        <p>{{user.first_name}} {{user.last_name}}</p>
+    {% endfor %}
+    <!-- <h1>{{users[1].first_name}}</h1> -->
 </body>
 </html>
