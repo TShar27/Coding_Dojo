@@ -1,5 +1,7 @@
 from mysqlconnection import connectToMySQL
 
+db = 'bankAccount'
+
 class User:
     def __init__(self,data):
         self.id = data['id']
@@ -13,7 +15,7 @@ class User:
     @classmethod
     def get_all_users(hicls):
         query = "SELECT * FROM users"
-        results = connectToMySQL('bankAccount').query_db(query)
+        results = connectToMySQL(db).query_db(query)
         print(results) # Dict
         users = []
         for user in results:
@@ -22,8 +24,17 @@ class User:
         print(users) # array
         return users
 
-    def get_one_user(cls):
-        pass
+    @classmethod
+    def get_one_user(cls,data):
+        query = "SELECT * FROM users WHERE id = %(id)s"
+        results = connectToMySQL(db).query_db(query, {'id': data})
+        # print(results)
+        return cls(results[0])
+
+    @classmethod
     def create_user(cls,data):
-        pass
-        
+        print(f"this data is coming from the data in user.py line 33 {data}")
+        query = "INSERT INTO users (first_name,last_name,email) values (%(first_name)s, %(last_name)s,%(email)s)"
+        results = connectToMySQL(db).query_db(query, data)
+        print(results)
+        return results

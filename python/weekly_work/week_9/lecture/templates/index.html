@@ -8,8 +8,12 @@
 </head>
 <body>
     {% for user in users %}
-        <p>{{user.first_name}} {{user.last_name}}</p>
+        <a href="/showUser/{{user.id}}">{{user.first_name}} {{user.last_name}}</a>
+        <br>
+        <!-- <p>{{user.first_name}} {{user.last_name}}</p> -->
     {% endfor %}
+    <br>
     <!-- <h1>{{users[1].first_name}}</h1> -->
+    <a href="/register">create a user</a>
 </body>
 </html>
