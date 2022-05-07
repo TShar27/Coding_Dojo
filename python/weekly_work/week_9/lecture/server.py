@@ -1,4 +1,3 @@
-import re
 from flask import Flask, render_template, request, redirect, session
 from user import User
 app = Flask(__name__)
