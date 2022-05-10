@@ -1,4 +1,5 @@
 from mysqlconnection import connectToMySQL
+db = 'bankAccount'
 
 class User:
     def __init__(self,data):
@@ -16,3 +17,15 @@ class User:
         results = connectToMySQL(db).query_db(query, data)
         print(results)
         return results
+
+    @classmethod
+    def get_all_users(hicls):
+        query = "SELECT * FROM users"
+        results = connectToMySQL(db).query_db(query)
+        print(results) # Dict
+        users = []
+        for user in results:
+            print(user) # each individual user line by line
+            users.append(hicls(user))
+        print(users) # array
+        return users
