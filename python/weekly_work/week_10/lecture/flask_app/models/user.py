@@ -1,4 +1,4 @@
-from mysqlconnection import connectToMySQL
+from flask_app.config.mysqlconnection import connectToMySQL
 
 db = 'bankAccount'
 
@@ -37,4 +37,16 @@ class User:
         query = "INSERT INTO users (first_name,last_name,email) values (%(first_name)s, %(last_name)s,%(email)s)"
         results = connectToMySQL(db).query_db(query, data)
         print(results)
+        return results
+    
+    @classmethod
+    def update_user(cls,data,id,):
+        query = f"Update users SET first_name = %(first_name)s,last_name = %(last_name)s,email = %(email)s WHERE id = {id}"
+        results = connectToMySQL(db).query_db(query,data)
+        return results
+
+    @classmethod
+    def delete_user(cls,id):
+        query = f"DELETE FROM users WHERE id = {id}"
+        results = connectToMySQL(db).query_db(query)
         return results

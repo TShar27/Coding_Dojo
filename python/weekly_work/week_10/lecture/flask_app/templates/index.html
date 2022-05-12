@@ -10,6 +10,7 @@
     {% for user in users %}
         <a href="/showUser/{{user.id}}">{{user.first_name}} {{user.last_name}}</a>
         <a href="/update_user/{{user.id}}">Edit</a>
+        <a href="/destory/{{user.id}}">Delete</a>
         <br>
     {% endfor %}
     <br>
