@@ -27,7 +27,7 @@ def edit_page(id):
     user = User.get_one_user(id)
     return render_template("edit.html", user = user) # first variable can be any name as long as it matches in the jinja code
 
-@app.route("/updateUser/<int:id>",methods = ['post'])
+@app.route("/updateUser/<int:id>",methods = ['post']) # never see this URL 
 def update_user(id):
     User.update_user(request.form,id) 
     return redirect("/")

@@ -29,3 +29,22 @@ class User:
             users.append(hicls(user))
         print(users) # array
         return users
+    
+    @classmethod
+    def show_one_user(hicls,data):
+        query = "SELECT * FROM users where id = %(id)s"
+        results = connectToMySQL(db).query_db(query,{'id':data})
+        print(results)
+        return hicls(results[0]) # only way to return an output on the front end
+    
+    @classmethod
+    def update_user(hicls,data,id):
+        query = f"Update users SET first_name = %(first_name)s,last_name = %(last_name)s,email = %(email)s WHERE id = {id}"
+        results = connectToMySQL(db).query_db(query,data)
+        return results 
+    
+    @classmethod
+    def deletion(hicls,id):
+        query = f"DELETE FROM users WHERE id = {id}"
+        results = connectToMySQL(db).query_db(query)
+        return results 
