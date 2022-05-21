@@ -46,6 +46,6 @@ class User:
     
     @classmethod
     def deletion(hicls,id):
-        query = f"DELETE FROM users WHERE id = {id}"
-        results = connectToMySQL(db).query_db(query)
+        query = "DELETE FROM users WHERE id = %(id)s)"
+        results = connectToMySQL(db).query_db(query,{'id':id})
         return results 
