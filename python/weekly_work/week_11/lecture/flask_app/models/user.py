@@ -1,6 +1,8 @@
 from flask_app.config.mysqlconnection import connectToMySQL
+from flask_app.models.account import BankAccount
 import pprint
-db = 'bankAccount'
+
+db = 'mydb'
 
 class User:
     def __init__(self,data):
@@ -16,8 +18,33 @@ class User:
     def get_all_users_with_accounts(cls,id):
         query = f"SELECT * FROM users u LEFT JOIN bankAccounts ba ON u.id = ba.user_id WHERE u.id = {id}"
         results = connectToMySQL(db).query_db(query)
-        print(results)
+        pprint.pprint(results,sort_dicts=False)
+        user = cls(results[0])
+        for row in results:
+            account = {
+                "id": row['ba.id'],
+                "type": row['type'],
+                "amount": row['amount'],
+                "created_at": row['ba.created_at'],
+                "updated_at": row['ba.updated_at'],
+                "user_id": row['user_id']
+            }
+            user.account.append(BankAccount(account))
+        return user
 
+# row = [{'id': 1,
+#   'first_name': 'timmy',
+#   'last_name': 'shar',
+#   'email': 'timshar27@gmail.com',
+#   'password': '12345678',
+#   'created_at': datetime.datetime(2022, 5, 18, 22, 17, 38),
+#   'updated_at': datetime.datetime(2022, 5, 18, 22, 17, 38),
+#   'ba.id': 1,
+#   'type': 'savings',
+#   'amount': 500.0,
+#   'ba.created_at': datetime.datetime(2022, 5, 18, 22, 17, 41),
+#   'ba.updated_at': datetime.datetime(2022, 5, 18, 22, 17, 41),
+#   'user_id': 1},
 
     @classmethod
     def get_all_users(cls):

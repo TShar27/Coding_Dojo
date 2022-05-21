@@ -1,6 +1,6 @@
 from flask_app.config.mysqlconnection import connectToMySQL
 
-db = 'bankAccount'
+db = 'mydb'
 
 class BankAccount:
     def __init__(self,data):

@@ -40,4 +40,4 @@ def delete_user(id):
 @app.route("/show_accounts/<int:id>")
 def show_account(id):
     userAccounts = User.get_all_users_with_accounts(id)
-    return render_template("show_one_with_accounts.html")
+    return render_template("show_one_with_accounts.html", user = userAccounts)
