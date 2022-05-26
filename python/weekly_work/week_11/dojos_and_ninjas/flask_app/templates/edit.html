@@ -4,18 +4,18 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit User</title>
+    <title>Edit Ninja</title>
 </head>
 <body>
-    <form action="/editUser/{{user.id}}" method = "post">
+    <form action="/editNinja/{{ninja.id}}" method = "post">
         <label for="">first_name</label>
-        <input type="text" name = "first_name" value = "{{user.first_name}}">
+        <input type="text" name = "first_name" value = "{{ninja.first_name}}">
         <label for="">last_name</label>
-        <input type="text" name = "last_name" value = "{{user.last_name}}">
-        <label for="">email</label>
-        <input type="text" name = "email" value = "{{user.email}}">
+        <input type="text" name = "last_name" value = "{{ninja.last_name}}">
+        <label for="">Age</label>
+        <input type="text" name = "age" value = "{{ninja.age}}">
         <button>Update</button>
     </form>
-    <a href="/show_user/{{user.id}}">Show User</a> | <a href="/">Home</a>
+    <a href="/show_ninja/{{ninja.id}}">Show Ninja</a> | <a href="/">Home</a>
 </body>
 </html>

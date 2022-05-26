@@ -7,27 +7,28 @@
     <title>Show All</title>
 </head>
 <body>
-    <h1>All Users</h1>
+    <h1>All Ninjas</h1>
         <table>
             <thead>
                 <tr>
-                    <th>First Name</th>
-                    <th>Last Name</th>
-                    <th>Age</th>
+                    <th>First Name |</th>
+                    <th>Last Name |</th>
+                    <th>Age |</th>
                     <th>ACTIONS</th>
                 </tr>
             </thead>
             <tbody>
-                {% for user in users %}
+                {% for ninja in ninjas %}
                     <tr>
-                        <td>{{user.first_name}}</td>
-                        <td>{{user.last_name}}</td>
-                        <td>{{user.age}}</td>
-                        <td> <a href="/show_user/{{user.id}}">Show</a> | <a href="/edit_user/{{user.id}}">Edit</a> | <a href="/delete/{{user.id}}">Delete</a> </td>
+                        <td>{{ninja.first_name}}</td>
+                        <td>{{ninja.last_name}}</td>
+                        <td>{{ninja.age}}</td>
+                        <td> <a href="/show_ninja/{{ninja.id}}">Show</a> | <a href="/edit_ninja/{{ninja.id}}">Edit</a> | <a href="/delete/{{ninja.id}}">Delete</a> </td>
+                        <td><a href="/show_dojo/{{ninja.id}}">Show Accounts</a></td>
                     </tr>
                 {% endfor %}
             </tbody>
         </table>
-        <a href="/read_all/create_user"><button>Create User</button></a>
+        <a href="/read_all/create_ninja"><button>Create Ninja</button></a>
 </body>
 </html>
