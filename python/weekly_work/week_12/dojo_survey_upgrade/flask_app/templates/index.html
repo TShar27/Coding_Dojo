@@ -12,31 +12,33 @@
             <form action="/process" method="post">
                 <div>
                     <p>
-                        <label> Name: </label>
-                        <input type="text" name="name">
+                        <label for="name">Name</label>
+                        <input type="text" name = "name">
                     </p>
                 </div>
                 <div>
-                    <label for="">Dojo Location</label>
+                    <label for="location">Dojo Location</label>
                     <select name="location" id="">
-                        <option value="1">Chicago</option>
-                        <option value="2">New York</option>
-                        <option value="3">Los Angeles</option>
-                        <option value="4">Africa</option>
+                        <option value="">-- Select A Location --</option>
+                        <option value="Chicago">Chicago</option>
+                        <option value="New York">New York</option>
+                        <option value="Los Angeles">Los Angeles</option>
+                        <option value="Africa">Africa</option>
                     </select>
                 </div>
                 <div>  
-                    <label for="">Favorite Language</label>
+                    <label for="language">Favorite Language</label>
                     <select name="language" id="">
-                        <option value="1">Python</option>
-                        <option value="2">SQL</option>
-                        <option value="3">Javascript</option>
-                        <option value="4">Css</option>
+                        <option value="">-- Select A Language --</option>
+                        <option value="Python">Python</option>
+                        <option value="SQL">SQL</option>
+                        <option value="Javascript">Javascript</option>
+                        <option value="Css">Css</option>
                     </select>
                 </div>
                 <div>
                     <p>Comments:</p>
-                        <textarea name="comment" cols="20" rows="5"></textarea>   
+                        <textarea name="comments" cols="20" rows="5"></textarea>   
                 </div>
                 <button>Submit</button>
             </form>  
