@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    {% with messages = get_flashed_messages() %}     <!-- declare a variable called messages -->
+        {% if messages %}                            <!-- check if there are any messages -->
+            {% for message in messages %}            <!-- loop through the messages -->
+                <p>{{message}}</p>                   <!-- display each message in a paragraph tag -->
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+    <h1>{{user.first_name}} {{user.last_name}}</h1>
+    <form action="/create_account/{{user.id}}", method = "post">
+        <label for="">Type</label>
+        <select name="type" id="">
+            <option value="checking">Checking</option>
+            <option value="savings">Savings</option>
+            <option value="off_shore">Off_shore</option>
+        </select>
+        <label for="">Amount</label>
+        <input type="text" name = "amount"> 
+        <button>Submit</button>
+    </form>
+</body>
+</html>
+<!-- in the inputs the names correspond to the keys in a dictionary while the inputs = the values -->
