@@ -13,6 +13,27 @@ class Survey:
         self.created_at = data['created_at']
         self.updated_at = data['updated_at']
 
+    @staticmethod
+    def required_fields(survey_data):
+        is_valid = True
+        if len(survey_data['name']) == 0:
+            is_valid = False
+            flash("Name must have an entry")
+        elif len(survey_data['name']) < 3:
+            is_valid = False
+            flash("Name must be greater than 2 charachters")
+        if len(survey_data['location']) == 0:
+            is_valid = False
+            flash("Location must have an entry")
+        if len(survey_data['language']) == 0:
+            is_valid = False
+            flash("Language must have an entry")
+        if len(survey_data['comments']) == 0:
+            is_valid = False
+            flash("Comments must have an entry")
+        return is_valid
+
+
     
     @classmethod
     def save(cls,data):
