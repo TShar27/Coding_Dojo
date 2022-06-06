@@ -1,4 +1,5 @@
 import email
+from operator import is_
 from flask_app.config.mysqlconnection import connectToMySQL
 import pprint
 from flask import flash
@@ -23,6 +24,17 @@ class User:
         
         return connectToMySQL(db).query_db(query,data)
 
+
+
+    @classmethod 
+    def get_by_email(cls,data):
+        query = "SELECT * FROM log_reg_users where email  = %(email)s "
+        results = connectToMySQL(db).query_db(query,data)
+        if results:
+            return cls(results[0])
+        else:
+            return False 
+
     @staticmethod
     def validate(data):
         EMAIL_REGEX = re.compile(r'^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$') 
@@ -36,3 +48,13 @@ class User:
         if not EMAIL_REGEX.match(data['email']):
             is_valid = False
             flash('Email is not valid') 
+        elif not User.get_by_email({'email': data['email']}):
+            is_valid = False
+            flash('Email is already in use')
+        if data['password'] != data['confirm']:
+            is_valid = False
+            flash('Password does not match current password')
+            
+
+
+            
