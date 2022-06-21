@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='/css/style.css') }}">
+    <title>Show All</title>
+</head>
+<body>
+    <div class = nav>
+        <h1>Howdy {{user.first_name}}</h1>
+    </div>
+    <h3>All TV Shows</h3> 
+    <button><a href="/logout">Logout</a></button>
+    <div class = table>
+        <table>
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Network</th>
+                    <th>Release Date</th>
+                    <th>ACTIONS</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for show in tv_show %}
+                    <tr>
+                        <td>{{show.title}}</td>
+                        <td>{{show.network}}</td>
+                        <td>{{show.release_date}}</td>
+                        <td> <a href="/show/{{show.id}}">Show</a> | <a href="/edit/{{show.id}}">Edit</a> | <a href="/delete/{{show.id}}">Delete</a> </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+        <a href="/dashboard/add_show"><button>Add a New Show</button></a>
+</body>
+</html>
