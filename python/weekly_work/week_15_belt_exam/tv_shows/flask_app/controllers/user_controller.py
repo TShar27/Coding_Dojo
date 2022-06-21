@@ -62,9 +62,12 @@ def dashboard():
 
 @app.route("/show/<int:id>")
 def tv_show(id):
+    is_valid = TvShow.validate_show(request.form)
+    
     data = {
         "id": session['user_id']
     }
+    
     return render_template("showOne.html", tv_show = TvShow.show_one_tv_show(id), user = User.show_one_user(data))
 
 

@@ -40,6 +40,8 @@ class User:
             is_valid = False
             flash("Passwords do not match!","register")
         return is_valid
+    
+
 
     @classmethod
     def save(cls,data):
