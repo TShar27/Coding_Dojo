@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TV Shows</title>
+    <title>Paintings</title>
 </head>
 <body>
 {% with messages = get_flashed_messages() %}     <!-- declare a variable called messages -->
@@ -14,12 +14,11 @@
         {% endfor %}
     {% endif %}
 {% endwith %}
-    <h2>{{tv_show.title}}</h2>
-    <p>Network: {{tv_show.network}}</p>
-    <p>Release Date: {{tv_show.release_date}}</p>
-    <p>Description: {{tv_show.description}}</p>
-    <h5>Posted By: {{user.first_name}} {{user.last_name}}</h5>
-    <a href="/edit/{{tv_show.id}}">Edit</a> | <a href="/delete/{{tv_show.id}}">Delete</a>
+    <h2>{{paintings.title}}</h2>
+    <h5>Painted By: {{artist.first_name}} {{artist.last_name}}</h5>
+    <p>Description: {{paintings.description}}</p>
+    <p>Price: {{paintings.price}}</p>
+    <a href="/edit/{{paintings.id}}">Edit</a> | <a href="/delete/{{paintings.id}}">Delete</a>
     <a href="/dashboard">Home</a>
 </body>
 </html>

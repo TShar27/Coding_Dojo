@@ -17,32 +17,23 @@
 </head>
 <body>
     <div class = nav>
-        <h1>Howdy {{user.first_name}}</h1>
+        <h1>Howdy {{artist.first_name}}</h1>
     </div>
-    <h3>All TV Shows</h3> 
-    <button><a href="/logout">Logout</a></button>
+    <h3>All Paintings</h3> 
     <div class = table>
         <table>
-            <thead>
-                <tr>
-                    <th>Title</th>
-                    <th>Network</th>
-                    <th>Release Date</th>
-                    <th>ACTIONS</th>
-                </tr>
-            </thead>
             <tbody>
-                {% for show in tv_show %}
+                {% for i in paintings %}
                     <tr>
-                        <td>{{show.title}}</td>
-                        <td>{{show.network}}</td>
-                        <td>{{show.release_date}}</td>
-                        <td> <a href="/show/{{show.id}}">Show</a> | <a href="/edit/{{show.id}}">Edit</a> | <a href="/delete/{{show.id}}">Delete</a> </td>
+                        <td> <a href="/show/{{i.id}}">{{i.title}}</a> by {{i.first_name}} {{i.last_name}}</td>
+                        <td> <a href="/edit/{{i.id}}">Edit</a> | <a href="/delete/{{i.id}}">Delete</a> </td>
                     </tr>
                 {% endfor %}
             </tbody>
         </table>
     </div>
-        <a href="/dashboard/add_show"><button>Add a New Show</button></a>
+        <a href="/dashboard/add_painting"><button>Add a New Painting</button></a>
+
+        <button><a href="/logout">Logout</a></button>
 </body>
 </html>

@@ -3,9 +3,9 @@ from flask import flash
 import re
 EMAIL_REGEX = re.compile(r'^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$') 
 
-db = 'tv_shows_2'
+db = 'artists_paintings'
 
-class User:
+class Artist:
     def __init__(self,data):
         self.id = data['id']
         self.first_name = data['first_name']
@@ -45,13 +45,13 @@ class User:
 
     @classmethod
     def save(cls,data):
-        query = "INSERT INTO users (first_name,last_name,email,password,created_at,updated_at) VALUES (%(first_name)s,%(last_name)s,%(email)s,%(password)s,NOW(),NOW())"
+        query = "INSERT INTO artists (first_name,last_name,email,password,created_at,updated_at) VALUES (%(first_name)s,%(last_name)s,%(email)s,%(password)s,NOW(),NOW())"
         return connectToMySQL(db).query_db(query,data)
 
 
     @classmethod
-    def show_one_user(cls,data):
-        query = "SELECT * FROM users WHERE id = %(id)s;"
+    def show_one(cls,data):
+        query = "SELECT * FROM artists WHERE id = %(id)s;"
         results = connectToMySQL(db).query_db(query,data)
         return cls(results[0])
 
@@ -59,11 +59,11 @@ class User:
 
     @classmethod
     def get_by_email(cls,data):
-        query = "SELECT * FROM users WHERE email = %(email)s;"
+        query = "SELECT * FROM artists WHERE email = %(email)s;"
         results = connectToMySQL(db).query_db(query,data)
         if len(results) < 1:
             return False
-        return User(results[0])
+        return Artist(results[0])
 
 
 
@@ -72,11 +72,6 @@ class User:
 
 
 
-    @classmethod ## Might not need this - will come back to it 
-    def see_results(cls):
-        query = "SELECT * FROM users ORDER BY id DESC LIMIT 1"
-        results = connectToMySQL(db).query_db(query)
-        return User(results[0])
 
         
 
