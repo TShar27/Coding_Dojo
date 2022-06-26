@@ -8,11 +8,11 @@
 </head>
 <body>
     <form action="/editPainting/{{paintings.id}}" method = "post">
-        <label for="">Title</label>
+        <label for="">Title:</label>
         <input type="text" name = "title" value = "{{paintings.title}}">
-        <label for="">Description</label>
+        <label for="">Description:</label>
         <input type="text" name = "description" value = "{{paintings.description}}">
-        <label for="">Price</label>
+        <label for="">Price ($) :</label>
         <input type="text" name = "price" value = "{{paintings.price}}">
         <button>Update</button>
     </form>
