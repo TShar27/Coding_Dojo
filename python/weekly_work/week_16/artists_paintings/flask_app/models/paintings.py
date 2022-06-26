@@ -16,6 +16,7 @@ class Paintings:
 
     @staticmethod
     def validate_painting(painting):
+        is_valid = True
         if len(painting['title']) ==0:
             is_valid = False
             flash("Title must have an entry")
@@ -30,10 +31,11 @@ class Paintings:
             flash("Description must be greater than 10 charachters")
         if len(painting['price']) ==0:
             is_valid = False
-            flash("price must have an entry")
-        elif len(painting['price']) < 1:
+            flash("Price must have an entry")
+        elif int(painting['price']) < 1:
             is_valid = False
             flash("Price must be greater than $0")
+        return is_valid
 
 
 

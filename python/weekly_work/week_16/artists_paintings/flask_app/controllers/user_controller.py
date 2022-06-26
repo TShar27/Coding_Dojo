@@ -85,14 +85,16 @@ def new():
     return render_template("create.html")
 
 @app.route("/add_painting", methods=["post"])
-def add_tv_show():
+def add_painting():
     is_valid = Paintings.validate_painting(request.form)
+    if not is_valid:
+        return redirect("/dashboard/add_painting")
     Paintings.create(request.form)
     return redirect("/dashboard")
 
 
 @app.route("/delete/<int:id>")
-def delete_tv_show(id):
+def delete_painting(id):
     data = {
             "id": id
         }
