@@ -25,4 +25,18 @@ def skyline(arr):
     
 # skyline([-1,1,1,7,-5,3])
 skyline([0,4])
-       
+
+# Zip it 
+
+def zip_it(arr_1,arr_2):
+    larger_arr = arr_1 if len(arr_1) > len(arr_2) else arr_2
+    new_arr = []
+    for i in range(len(larger_arr)):
+        if i <= (len(arr_1)) -1:
+            new_arr.append(arr_1[i])
+        if i <= (len(arr_2))-1:
+            new_arr.append(arr_2[i])  
+    print(new_arr)
+    
+
+zip_it([4,15,100],[10,20,30,40])
