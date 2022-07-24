@@ -20,7 +20,7 @@
         <h1>Welcome {{user.first_name}} {{user.last_name}}</h1>
     </div>
     <h3>Restaurants to be reviewed</h3> 
-    <div class = table>
+    <div class = restaurants_table>
         <table>
             <tbody>
                 {% for i in restaurants %}
@@ -32,8 +32,19 @@
             </tbody>
         </table>
     </div>
+    <div class = random>
         <a href="/dashboard/add_painting"><button>Add a New Painting</button></a>
 
         <button><a href="/logout">Logout</a></button>
+    </div>
+    <div class = review_section>
+        <h3>Reviews</h3>
+        {% for i in reviews %}
+            Restaurant Name: {{i.name}} 
+            Rating: {{i.rating}}
+            Analysis: {{i.analysis}}
+        {% endfor %}
+    </div>
 </body>
+
 </html>

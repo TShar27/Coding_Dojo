@@ -57,7 +57,7 @@ def dashboard():
     data = {
         "id": session['user_id']
     }
-    return render_template("dashboard.html", user = User.show_one(data), restaurants = Restaurants.restaurants_to_be_reviewed(data))
+    return render_template("dashboard.html", user = User.show_one(data), restaurants = Restaurants.restaurants_to_be_reviewed(data), reviews = Restaurants.reviewed_restauarnts(data))
 
 @app.route("/show/<int:id>")
 def tv_show(id):

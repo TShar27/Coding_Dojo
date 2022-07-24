@@ -8,10 +8,9 @@ db = 'foodie_test'
 class Restaurants:
     def __init__(self,data):
         self.id = data['id']
-        self.title = data['title']
+        self.name = data['name']
+        self.location = data['location']
         self.description = data['description']
-        self.price = data['price']
-        self.artists_id = data['artists_id']
 
 
     @staticmethod
@@ -41,12 +40,19 @@ class Restaurants:
 
     @classmethod
     def restaurants_to_be_reviewed(cls,data):
-        query = "SELECT rest.*,rev.rating FROM restaurants rest LEFT JOIN reviews rev ON rest.id = rev.restaurants_id WHERE rev.rating IS NULL "
+        query = "SELECT rest.*,rev.rating FROM restaurants rest LEFT JOIN reviews rev ON rest.id = rev.restaurants_id WHERE rev.rating IS NULL"
         results = connectToMySQL(db).query_db(query,data)
         print(results)
         pprint.pprint(results,sort_dicts=False)
         return results
-    
+
+    def reviewed_restauarnts(cls,data):
+        query = "SELECT rest.name,rev.rating,rev.analysis FROM restaurants rest LEFT JOIN reviews rev ON rest.id = rev.restaurants_id WHERE rev.rating IS NOT NULL"
+        results = connectToMySQL(db).query_db(query,data)
+        print(results)
+        pprint.pprint(results,sort_dicts=False)
+        return results
+
 
     @classmethod
     def show_one(cls,data):
