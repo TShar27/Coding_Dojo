@@ -7,6 +7,7 @@
     <title>Paintings</title>
 </head>
 <body>
+   <h1>{{restaurants.name}}</h1> 
 {% with messages = get_flashed_messages() %}     <!-- declare a variable called messages -->
     {% if messages %}                            <!-- check if there are any messages -->
         {% for message in messages %}            <!-- loop through the messages -->
@@ -14,11 +15,12 @@
         {% endfor %}
     {% endif %}
 {% endwith %}
-    <h2>{{paintings.title}}</h2>
-    <h5>Painted By: {{artist.first_name}} {{artist.last_name}}</h5>
-    <p>Description: {{paintings.description}}</p>
-    <p>Price ($): {{paintings.price}}</p>
-    <a href="/edit/{{paintings.id}}">Edit</a> | <a href="/delete/{{paintings.id}}">Delete</a> |
+    {% for i in reviews %}
+        <p>Reviewer: {{i.first_name}}</p> 
+        <p>Rating: {{i.rating}}</p>
+        <p>Description: {{i.analysis}}</p>
+    {% endfor %}
+    <a href="/edit/{{reviews.id}}">Edit</a> | <a href="/delete/{{reviews.id}}">Delete</a> |
     <a href="/dashboard">Dashboard</a>
 </body>
 </html>

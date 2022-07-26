@@ -3,6 +3,7 @@ from flask_bcrypt import Bcrypt
 from flask import render_template, request, redirect, session, flash
 from flask_app.models.user import User
 from flask_app.models.restaurants import Restaurants
+from flask_app.models.reviews import Reviews
 
 bcrypt = Bcrypt(app)
 
@@ -57,15 +58,15 @@ def dashboard():
     data = {
         "id": session['user_id']
     }
-    return render_template("dashboard.html", user = User.show_one(data), restaurants = Restaurants.restaurants_to_be_reviewed(data), reviews = Restaurants.reviewed_restauarnts(data))
+    return render_template("dashboard.html", user = User.show_one(data), restaurants = Restaurants.restaurants_to_be_reviewed(data), reviews = Reviews.reviewed_restauarnts (data))
 
-@app.route("/show/<int:id>")
-def tv_show(id):
+@app.route("/restaurant/<int:id>")
+def restaurant_review(id):
     data = {
         "id": session['user_id']
     }
-    
-    return render_template("showOne.html", paintings = Restaurants.show_one(id), artist = User.show_one(data))
+    return render_template("showOne.html", restaurants = Restaurants.show_one(id), reviews = Reviews.single_restaurant_reviews(data)) # my question is how can I call on a different model which has a different query in the same function? 
+    # my problem is that I have no way of calling another parameter, restaurants_id, within the function
 
 
 @app.route("/edit/<int:id>")

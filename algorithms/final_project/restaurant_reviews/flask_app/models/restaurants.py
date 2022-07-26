@@ -46,17 +46,10 @@ class Restaurants:
         pprint.pprint(results,sort_dicts=False)
         return results
 
-    def reviewed_restauarnts(cls,data):
-        query = "SELECT rest.name,rev.rating,rev.analysis FROM restaurants rest LEFT JOIN reviews rev ON rest.id = rev.restaurants_id WHERE rev.rating IS NOT NULL"
-        results = connectToMySQL(db).query_db(query,data)
-        print(results)
-        pprint.pprint(results,sort_dicts=False)
-        return results
-
 
     @classmethod
     def show_one(cls,data):
-        query = "SELECT * FROM paintings WHERE id = %(id)s"
+        query = "SELECT * FROM restaurants WHERE id = %(id)s"
         results = connectToMySQL(db).query_db(query,{'id':data})
         print(results)
         return cls(results[0])
