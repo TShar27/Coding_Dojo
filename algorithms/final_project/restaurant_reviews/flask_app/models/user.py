@@ -3,7 +3,7 @@ from flask import flash
 import re
 EMAIL_REGEX = re.compile(r'^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$') 
 
-db = 'foodie_test'
+db = 'foodie_real'
 
 class User:
     def __init__(self,data):
@@ -54,7 +54,6 @@ class User:
         query = "SELECT * FROM users WHERE id = %(id)s;"
         results = connectToMySQL(db).query_db(query,data)
         return cls(results[0])
-
 
 
     @classmethod

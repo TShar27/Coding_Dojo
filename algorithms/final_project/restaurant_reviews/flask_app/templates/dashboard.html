@@ -25,7 +25,7 @@
             <tbody>
                 {% for i in restaurants %}
                     <tr>
-                        <td> <a href="/restaurant/{{i.id}}">{{i.name}}</a> <b>Location:</b> {{i.location}} <b>Description:</b> {{i.description}}</td>
+                        <td> <a href="/restaurant/{{i.id}}">{{i.name}}</a> <b>Location:</b> <a href="/locations/{{i.location}}">{{i.location}}</a> <b>Description:</b> {{i.description}}</td>
                         <td> <a href="/edit/{{i.id}}">Edit</a> | <a href="/delete/{{i.id}}">Delete</a> </td>
                     </tr>
                 {% endfor %}
@@ -33,16 +33,17 @@
         </table>
     </div>
     <div class = random>
-        <a href="/dashboard/add_painting"><button>Add a New Painting</button></a>
+        <a href="/dashboard/add_review"><button>Add a New Review</button></a>
 
         <button><a href="/logout">Logout</a></button>
+        
     </div>
     <div class = review_section>
         <h3>Reviews</h3>
-        {% for i in reviews %}
-            Restaurant Name: <a href="/restaurant/{{i.restaurants_id}}">{{i.name}}</a>
-            Rating: {{i.rating}}
-            Analysis: {{i.analysis}}
+        {% for food in reviews %}
+            Restaurant Name: <a href="/restaurant/{{food.restaurants_id}}">{{food.name}}</a>
+            Rating: {{food.rating}}
+            Analysis: {{food.analysis}}
         {% endfor %}
     </div>
 </body>

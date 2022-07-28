@@ -65,8 +65,11 @@ def restaurant_review(id):
     data = {
         "id": session['user_id']
     }
-    return render_template("showOne.html", restaurants = Restaurants.show_one(id), reviews = Reviews.single_restaurant_reviews(data)) # my question is how can I call on a different model which has a different query in the same function? 
-    # my problem is that I have no way of calling another parameter, restaurants_id, within the function
+    return render_template("showOne.html", restaurants = Restaurants.show_one(id), user = User.show_one(data), reviews = Reviews.single_restaurant_reviews(id)) 
+
+@app.route("/locations/<location>")
+def locations(location):
+    return render_template("locations.html", locations = Restaurants.locations(location))
 
 
 @app.route("/edit/<int:id>")
@@ -79,16 +82,16 @@ def on_page_edit(id):
     return redirect("/dashboard")
 
 
-@app.route("/dashboard/add_painting") 
+@app.route("/dashboard/add_review") 
 def new():
     return render_template("create.html")
 
-@app.route("/add_painting", methods=["post"])
+@app.route("/add_review", methods=["post"])
 def add_painting():
     is_valid = Restaurants.validate_painting(request.form)
     if not is_valid:
-        return redirect("/dashboard/add_painting")
-    Restaurants.create(request.form)
+        return redirect("/dashboard/add_review")
+    Reviews.create(request.form)
     return redirect("/dashboard")
 
 
